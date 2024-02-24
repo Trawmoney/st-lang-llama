@@ -7,3 +7,6 @@ cookiecutter
 click==7.1.2
 ollama
 langchain
+streamlit-d3graph==1.0.3
+scipy==1.11.2
+scikit-learn==1.3.1
