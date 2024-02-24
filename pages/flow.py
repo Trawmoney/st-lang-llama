@@ -1,10 +1,13 @@
- 1from barfi import st_barfi, Block
- 2
- 3add = Block(name='Addition')
- 4sub = Block(name='Subtraction')
- 5mul = Block(name='Multiplication')
- 6div = Block(name='Division')
- 7
- 8barfi_result = st_barfi(base_blocks= [add, sub, mul, div])
- 9# or if you want to use a category to organise them in the frontend sub-menu
-10barfi_result = st_barfi(base_blocks= {'Op 1': [add, sub], 'Op 2': [mul, div]})
+from barfi import barfi_schemas
+import streamlit as st
+
+saved_schemas = barfi_schemas()
+
+select_schema = st.selectbox('Select a saved schema:', saved_schemas)
+
+feed = Block(name='Feed')
+feed.add_input()
+result = Block(name='Result')
+result.add_output()
+
+barfi_result = st_barfi(base_blocks= [feed, result], load_schema=select_schema)
