@@ -1,0 +1,9 @@
+barfi
+streamlit-force-graph-simulator
+streamlit-cytoscapejs
+streamlit_jupyter
+streamlit-kickoff-cli
+cookiecutter
+click==7.1.2
+ollama
+langchain
